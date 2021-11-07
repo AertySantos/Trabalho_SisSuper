@@ -10,8 +10,11 @@ namespace Trabalho_SisSuper
     {
         private bool modo;//automatico ou manual
         private int andar;//onde esta o elevador
+        private bool movimento;
 
-        public List<Botao> bt = new List<Botao>();//lista de botoes
+        public List<Botao> bti = new List<Botao>();//lista de botoes internos
+        public List<Botao> bte = new List<Botao>();//lista de botoes externos
+
 
         public Elevador()
         {
@@ -20,11 +23,17 @@ namespace Trabalho_SisSuper
             this.andar = 0;
             Botao bts = new Botao();
 
-            bt.Add(bts);//gera uma lista com 5 botões
-            bt.Add(bts);
-            bt.Add(bts);
-            bt.Add(bts);
-            bt.Add(bts);
+            bti.Add(bts);//gera uma lista com 5 botões internos
+            bti.Add(bts);
+            bti.Add(bts);
+            bti.Add(bts);
+            bti.Add(bts);
+
+            bte.Add(bts);//gera uma lista com 5 botões externos
+            bte.Add(bts);
+            bte.Add(bts);
+            bte.Add(bts);
+            bte.Add(bts);
 
         }
 
@@ -36,6 +45,16 @@ namespace Trabalho_SisSuper
         public void SetAndar(int a)
         {
             this.andar = a;
+        }
+
+        public void SetMovimento(bool m)
+        {
+            this.movimento = m;
+        }
+
+        public bool GetMovimento()
+        {
+            return this.movimento;
         }
 
         public bool GetModo()
