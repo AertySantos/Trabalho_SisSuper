@@ -21,12 +21,18 @@ namespace Trabalho_SisSuper
 
             this.simulador.Monitor += Monitora_Elevador;
             teste = new Task(simulador.doSimulador);
-            
+            //this.teste.Start();
+
+        }
+
+       private void Form1_Load(object sender, EventArgs e)
+        {
+            this.teste.Start();
         }
 
         private void Monitora_Elevador(object sender, EventArgs e)
         {
-            
+
             /*if (tBmensagem.BackColor == System.Drawing.Color.Red)
             {
                 this.Invoke((MethodInvoker)delegate ()
@@ -41,6 +47,18 @@ namespace Trabalho_SisSuper
                     tBmensagem.BackColor = System.Drawing.Color.Red;
                 });
             }*/
+
+            
+                this.Invoke((MethodInvoker)delegate ()
+                {
+                    andar.Text = simulador.GetMaiorBti().ToString();
+                    l1.Text = simulador.GetBti(0).ToString();
+                    l2.Text = simulador.GetBti(1).ToString();
+                    l3.Text = simulador.GetBti(2).ToString();
+                    l4.Text = simulador.GetBti(3).ToString();
+                    l5.Text = simulador.GetBti(4).ToString();
+                });
+            
 
 
         }
