@@ -66,6 +66,18 @@ namespace Trabalho_SisSuper
         {
             return this.andar;
         }
+
+        public void setBti(int bt, bool e)
+        {
+            this.bti[bt].SetEstado(e);
+        }
+
+        public void setBte(int bt, bool e, bool a)//bt> o botao acinado, e> se foi apertado, a> sobe ou desce
+        {
+            this.bte[bt].SetEstado(e);
+            this.bte[bt].SetAcao(a);
+        }
+
     }
 
 }

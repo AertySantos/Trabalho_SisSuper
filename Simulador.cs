@@ -9,7 +9,7 @@ namespace Trabalho_SisSuper
 {
     class Simulador:Elevador
     {
-        public int andar = 0;
+        
         public delegate void Monitoramento(object sender, EventArgs args);
         public event Monitoramento Monitor;
        
