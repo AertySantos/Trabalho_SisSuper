@@ -64,6 +64,7 @@ namespace Trabalho_SisSuper
             this.bt1.TabIndex = 0;
             this.bt1.Text = "0";
             this.bt1.UseVisualStyleBackColor = true;
+            this.bt1.Click += new System.EventHandler(this.bt1_Click);
             // 
             // label1
             // 
@@ -146,7 +147,6 @@ namespace Trabalho_SisSuper
             this.label2.Size = new System.Drawing.Size(121, 22);
             this.label2.TabIndex = 1;
             this.label2.Text = "Menu Externo";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // button7
             // 
@@ -237,7 +237,7 @@ namespace Trabalho_SisSuper
             this.label3.Size = new System.Drawing.Size(80, 22);
             this.label3.TabIndex = 1;
             this.label3.Text = "1° Andar";
-            this.label3.Click += new System.EventHandler(this.label2_Click);
+         
             // 
             // label4
             // 
@@ -248,7 +248,7 @@ namespace Trabalho_SisSuper
             this.label4.Size = new System.Drawing.Size(80, 22);
             this.label4.TabIndex = 1;
             this.label4.Text = "2° Andar";
-            this.label4.Click += new System.EventHandler(this.label2_Click);
+           
             // 
             // label5
             // 
@@ -259,7 +259,7 @@ namespace Trabalho_SisSuper
             this.label5.Size = new System.Drawing.Size(80, 22);
             this.label5.TabIndex = 1;
             this.label5.Text = "3° Andar";
-            this.label5.Click += new System.EventHandler(this.label2_Click);
+           
             // 
             // label6
             // 
@@ -270,7 +270,7 @@ namespace Trabalho_SisSuper
             this.label6.Size = new System.Drawing.Size(80, 22);
             this.label6.TabIndex = 1;
             this.label6.Text = "4° Andar";
-            this.label6.Click += new System.EventHandler(this.label2_Click);
+       
             // 
             // label7
             // 
@@ -281,7 +281,7 @@ namespace Trabalho_SisSuper
             this.label7.Size = new System.Drawing.Size(64, 22);
             this.label7.TabIndex = 1;
             this.label7.Text = "Terreo";
-            this.label7.Click += new System.EventHandler(this.label2_Click);
+     
             // 
             // label8
             // 
@@ -293,6 +293,7 @@ namespace Trabalho_SisSuper
             this.label8.Size = new System.Drawing.Size(73, 78);
             this.label8.TabIndex = 1;
             this.label8.Text = "0";
+            
             // 
             // label9
             // 

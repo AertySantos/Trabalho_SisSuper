@@ -11,21 +11,20 @@ namespace Trabalho_SisSuper
         private bool modo;//automatico ou manual
         private int andar;//onde esta o elevador
 
-        List<Botao> bt = new List<Botao>();//lista de botoes
+        public List<Botao> bt = new List<Botao>();//lista de botoes
 
-        public Elevador(int num, bool md, int a)
+        public Elevador()
         {
 
-            this.modo = md;
-            this.andar = a;
+            this.modo = false;
+            this.andar = 0;
             Botao bts = new Botao();
-            int contador = num;
 
-            while (contador > 0)
-            {
-                bt.Add(bts);//gera uma lista de botoes
-                contador--;
-            }
+            bt.Add(bts);//gera uma lista com 5 botões
+            bt.Add(bts);
+            bt.Add(bts);
+            bt.Add(bts);
+            bt.Add(bts);
 
         }
 
