@@ -48,26 +48,31 @@ namespace Trabalho_SisSuper
         private void bti0_Click(object sender, EventArgs e)
         {
             simulador.setBti(0,true);
+            bti0.BackColor = System.Drawing.Color.Red;
         }
 
         private void bti1_Click(object sender, EventArgs e)
         {
             simulador.setBti(1, true);
+            bti1.BackColor = System.Drawing.Color.Red;
         }
 
         private void bti2_Click(object sender, EventArgs e)
         {
             simulador.setBti(2, true);
+            bti2.BackColor = System.Drawing.Color.Red;
         }
 
         private void bti3_Click(object sender, EventArgs e)
         {
             simulador.setBti(3, true);
+            bti3.BackColor = System.Drawing.Color.Red;
         }
 
         private void bti4_Click(object sender, EventArgs e)
         {
             simulador.setBti(4, true);
+            bti4.BackColor = System.Drawing.Color.Red;
         }
 
         private void manual_CheckedChanged(object sender, EventArgs e)

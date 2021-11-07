@@ -19,6 +19,7 @@ namespace Trabalho_SisSuper
             {
                 if (Monitor != null)
                 {
+
                     Monitor(this, EventArgs.Empty);
                 }
                 Thread.Sleep(3000);

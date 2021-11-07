@@ -10,7 +10,9 @@ namespace Trabalho_SisSuper
     {
         private bool modo;//automatico ou manual
         private int andar;//onde esta o elevador
-        private bool movimento;
+
+        private bool movimento;//esta em movimento?
+        private bool acaoMovimento;//esta subindo ou descendo?
 
         public List<Botao> bti = new List<Botao>();//lista de botoes internos
         public List<Botao> bte = new List<Botao>();//lista de botoes externos
@@ -50,6 +52,16 @@ namespace Trabalho_SisSuper
         public void SetMovimento(bool m)
         {
             this.movimento = m;
+        }
+
+        public void SetAcaoMovimento(bool am)
+        {
+            this.acaoMovimento = am;
+        }
+
+        public bool GetAcaoMovimento()
+        {
+            return this.acaoMovimento;
         }
 
         public bool GetMovimento()
