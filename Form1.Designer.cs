@@ -278,7 +278,6 @@ namespace Trabalho_SisSuper
             this.andar.Size = new System.Drawing.Size(73, 78);
             this.andar.TabIndex = 1;
             this.andar.Text = "0";
-            this.andar.Click += new System.EventHandler(this.andar_Click);
             // 
             // estado
             // 
@@ -289,7 +288,6 @@ namespace Trabalho_SisSuper
             this.estado.Size = new System.Drawing.Size(68, 22);
             this.estado.TabIndex = 1;
             this.estado.Text = "Parado";
-            this.estado.Click += new System.EventHandler(this.estado_Click);
             // 
             // manual
             // 

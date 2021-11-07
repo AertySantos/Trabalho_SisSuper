@@ -47,87 +47,79 @@ namespace Trabalho_SisSuper
 
         private void bti0_Click(object sender, EventArgs e)
         {
-            simulador.bti[0].SetEstado(true);
+            simulador.setBti(0,true);
         }
 
         private void bti1_Click(object sender, EventArgs e)
         {
-            simulador.bti[1].SetEstado(true);
+            simulador.setBti(1, true);
         }
 
         private void bti2_Click(object sender, EventArgs e)
         {
-            simulador.bti[2].SetEstado(true);
+            simulador.setBti(2, true);
         }
 
         private void bti3_Click(object sender, EventArgs e)
         {
-            simulador.bti[3].SetEstado(true);
+            simulador.setBti(3, true);
         }
 
         private void bti4_Click(object sender, EventArgs e)
         {
-            simulador.bti[4].SetEstado(true);
+            simulador.setBti(4, true);
         }
 
         private void manual_CheckedChanged(object sender, EventArgs e)
         {
-
+            simulador.SetModo(false);//manual
         }
 
         private void automatico_CheckedChanged(object sender, EventArgs e)
         {
-
+            simulador.SetModo(true);//automatico
         }
 
         private void btesobe1_Click(object sender, EventArgs e)
         {
-
+            simulador.setBte(1, true, true);
         }
 
         private void btedesce1_Click(object sender, EventArgs e)
         {
-
+            simulador.setBte(1, true, false);
         }
 
         private void btesobe2_Click(object sender, EventArgs e)
         {
-
+            simulador.setBte(2, true, true);
         }
 
         private void btedesce2_Click(object sender, EventArgs e)
         {
-
+            simulador.setBte(2, true, false);
         }
 
         private void btesobe3_Click(object sender, EventArgs e)
         {
-
+            simulador.setBte(3, true, true);
         }
 
         private void btedesce3_Click(object sender, EventArgs e)
         {
-
+            simulador.setBte(3, true, false);
         }
 
         private void bteandar4_Click(object sender, EventArgs e)
         {
-
+            simulador.setBte(4, true, false);
         }
 
         private void bteterreo_Click(object sender, EventArgs e)
         {
-
+            simulador.setBte(0, true, true);
         }
 
-        private void andar_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void estado_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
