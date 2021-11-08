@@ -53,12 +53,6 @@ namespace Trabalho_SisSuper
             this.estado = new System.Windows.Forms.Label();
             this.manual = new System.Windows.Forms.RadioButton();
             this.automatico = new System.Windows.Forms.RadioButton();
-            this.l1 = new System.Windows.Forms.Label();
-            this.l2 = new System.Windows.Forms.Label();
-            this.l3 = new System.Windows.Forms.Label();
-            this.l4 = new System.Windows.Forms.Label();
-            this.l5 = new System.Windows.Forms.Label();
-            this.terr = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // bti0
@@ -320,71 +314,11 @@ namespace Trabalho_SisSuper
             this.automatico.UseVisualStyleBackColor = true;
             this.automatico.CheckedChanged += new System.EventHandler(this.automatico_CheckedChanged);
             // 
-            // l1
-            // 
-            this.l1.AutoSize = true;
-            this.l1.Location = new System.Drawing.Point(346, 356);
-            this.l1.Name = "l1";
-            this.l1.Size = new System.Drawing.Size(15, 13);
-            this.l1.TabIndex = 4;
-            this.l1.Text = "l1";
-            // 
-            // l2
-            // 
-            this.l2.AutoSize = true;
-            this.l2.Location = new System.Drawing.Point(346, 369);
-            this.l2.Name = "l2";
-            this.l2.Size = new System.Drawing.Size(15, 13);
-            this.l2.TabIndex = 4;
-            this.l2.Text = "l2";
-            // 
-            // l3
-            // 
-            this.l3.AutoSize = true;
-            this.l3.Location = new System.Drawing.Point(346, 382);
-            this.l3.Name = "l3";
-            this.l3.Size = new System.Drawing.Size(15, 13);
-            this.l3.TabIndex = 4;
-            this.l3.Text = "l3";
-            // 
-            // l4
-            // 
-            this.l4.AutoSize = true;
-            this.l4.Location = new System.Drawing.Point(346, 395);
-            this.l4.Name = "l4";
-            this.l4.Size = new System.Drawing.Size(15, 13);
-            this.l4.TabIndex = 4;
-            this.l4.Text = "l4";
-            // 
-            // l5
-            // 
-            this.l5.AutoSize = true;
-            this.l5.Location = new System.Drawing.Point(346, 408);
-            this.l5.Name = "l5";
-            this.l5.Size = new System.Drawing.Size(15, 13);
-            this.l5.TabIndex = 4;
-            this.l5.Text = "l5";
-            // 
-            // terr
-            // 
-            this.terr.AutoSize = true;
-            this.terr.Location = new System.Drawing.Point(386, 408);
-            this.terr.Name = "terr";
-            this.terr.Size = new System.Drawing.Size(15, 13);
-            this.terr.TabIndex = 4;
-            this.terr.Text = "l5";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.terr);
-            this.Controls.Add(this.l5);
-            this.Controls.Add(this.l4);
-            this.Controls.Add(this.l3);
-            this.Controls.Add(this.l2);
-            this.Controls.Add(this.l1);
             this.Controls.Add(this.automatico);
             this.Controls.Add(this.manual);
             this.Controls.Add(this.label7);
@@ -443,12 +377,6 @@ namespace Trabalho_SisSuper
         private System.Windows.Forms.Label estado;
         private System.Windows.Forms.RadioButton manual;
         private System.Windows.Forms.RadioButton automatico;
-        private System.Windows.Forms.Label l1;
-        private System.Windows.Forms.Label l2;
-        private System.Windows.Forms.Label l3;
-        private System.Windows.Forms.Label l4;
-        private System.Windows.Forms.Label l5;
-        private System.Windows.Forms.Label terr;
     }
 }
 

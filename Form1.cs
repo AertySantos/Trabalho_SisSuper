@@ -38,13 +38,6 @@ namespace Trabalho_SisSuper
             {
                     andar.Text = simulador.GetAndar().ToString();
                     estadoAtual();
-                    l1.Text = simulador.GetBteUp(1).ToString();
-                    l2.Text = simulador.GetBteDown(1).ToString();
-                    l3.Text = simulador.GetBteUp(2).ToString();
-                    l4.Text = simulador.GetBteDown(2).ToString();
-                    l5.Text = simulador.GetBteUp(3).ToString();
-                    terr.Text = simulador.GetBteDown(3).ToString();
-                    
                     corAnterior();
 
                 if (simulador.GetModo())//automatico
@@ -198,6 +191,11 @@ namespace Trabalho_SisSuper
         {
             if (simulador.GetMovimento())
             {
+                if (simulador.statusE)
+                {
+                    estado.Text = "Parado";
+                }
+                else
                 if (simulador.GetAcaoMovimento())
                 {
                     estado.Text = "Subindo...";
@@ -218,6 +216,7 @@ namespace Trabalho_SisSuper
             if ((bti0.BackColor == System.Drawing.Color.Red) && (!simulador.GetBti(0)))
             {
                 bti0.BackColor = System.Drawing.Color.LightGray;
+
             }
 
             if ((bti1.BackColor == System.Drawing.Color.Red) && (!simulador.GetBti(1)))

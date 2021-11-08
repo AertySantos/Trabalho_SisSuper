@@ -17,20 +17,34 @@ namespace Trabalho_SisSuper
         {
             while (true)
             {
-                if (Monitor != null)
+                if (statusE)
                 {
-                    if (GetModo())
-                    {
-                        automatico();
-                    }
-                    else
-                    {
-                        manual();
-                    }
-                    
+                    Thread.Sleep(3000);
+                    statusE = false;
                     Monitor(this, EventArgs.Empty);
                 }
-                Thread.Sleep(3000);
+                else
+                {
+                    Thread.Sleep(3000);
+
+                    if (Monitor != null)
+                    {
+                        if (GetModo())
+                        {
+                            automatico();
+                        }
+                        else
+                        {
+                            manual();
+                        }
+
+                        Monitor(this, EventArgs.Empty);
+                    }
+                }
+                
+
+                
+               
             }
         }
 
@@ -92,6 +106,8 @@ namespace Trabalho_SisSuper
 
         public void manual()
         {
+           
+
             if (GetMovimento())//vejo se ele esta em movimento
             {
 
@@ -104,6 +120,7 @@ namespace Trabalho_SisSuper
                         acaoElevador();
                         setBti(GetAndar(), false);//desaciono o andar
                         setBteTotal(GetAndar(), false, false);//desaciono o andar
+                        statusE = true;
 
                     }
                     else if ((GetMaiorBte() == GetAndar()) && (GetMaiorBte() >= GetMaiorBti()))
@@ -111,17 +128,21 @@ namespace Trabalho_SisSuper
                         acaoElevador();
                         setBteTotal(GetAndar(), false, false);//desaciono o andar
                         setBti(GetAndar(), false);//desaciono o andar
+                        statusE = true;
                     }
                     else
                     {
                         if (GetBtin(GetAndar()).GetEstado())//se este anda esta acionado
                         {
                             setBti(GetAndar(), false);//desaciono o andar
+                            statusE = true;
                         }
 
                         if ((GetBtex(GetAndar()).GetEstado()) && (GetAndar() == 0 || GetAndar() == 4))//se este anda esta acionado
                         {
                             setBte(GetAndar(), false);//desaciono o andar
+                            
+                            statusE = true;
 
                         }
                         else if (GetBtex(GetAndar()).GetEstado())//se tiver subindo e apertou para subir
@@ -129,10 +150,12 @@ namespace Trabalho_SisSuper
                             if (GetBteDown(GetAndar()))
                             {
                                 setBtes(GetAndar(), true, false, false);
+                                //statusE = true;
                             }
                             else
                             {
                                 setBtes(GetAndar(), false, false, false);
+                                statusE = true;
                             }
                         }
                     }
@@ -147,24 +170,28 @@ namespace Trabalho_SisSuper
                         acaoElevador(); //parado
                         setBti(GetAndar(), false);//desaciono o andar
                         setBteTotal(GetAndar(), false, false);//desaciono o andar
+                        statusE = true;
                     }
                     else if ((GetMenorBte() == GetAndar()) && (GetMenorBte() <= GetMenorBti()))
                     {
                         acaoElevador();
                         setBteTotal(GetAndar(), false, false);//desaciono o andar
                         setBti(GetAndar(), false);//desaciono o andar
+                        statusE = true;
                     }
                     else
                     {
                         if (GetBtin(GetAndar()).GetEstado())//se este anda esta desejado
                         {
                             setBti(GetAndar(), false);//desaciono o andar
+                            statusE = true;
                         }
 
                         if ((GetBtex(GetAndar()).GetEstado()) && (GetAndar() == 0 || GetAndar() == 4))//se este anda esta no andar desejado
 
                         {
                             setBte(GetAndar(), false);//desaciono o andar
+                            statusE = true;
 
                         }
                         else if (GetBtex(GetAndar()).GetEstado())//se tiver descendo e apertou para descer
@@ -172,10 +199,12 @@ namespace Trabalho_SisSuper
                             if (GetBteUp(GetAndar()))
                             {
                                 setBted(GetAndar(), true, false, false);
+                                //statusE = true;
                             }
                             else
                             {
                                 setBted(GetAndar(), false, false, false);
+                                statusE = true;
                             }
                         }
                     }

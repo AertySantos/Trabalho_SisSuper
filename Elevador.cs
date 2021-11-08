@@ -13,6 +13,7 @@ namespace Trabalho_SisSuper
 
         private bool movimento;//esta em movimento?
         private bool acaoMovimento;//esta subindo ou descendo?
+        public bool statusE = false;
 
         public List<Botao> bti = new List<Botao>();//lista de botoes internos
         public List<Botao> bte = new List<Botao>();//lista de botoes externos
