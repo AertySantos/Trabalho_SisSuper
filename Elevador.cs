@@ -91,7 +91,12 @@ namespace Trabalho_SisSuper
 
         public void setBti(int bt, bool e)
         {
-            this.bti[0].SetEstado(e);
+            this.bti[bt].SetEstado(e);
+        }
+
+        public void setBte(int bt, bool e)
+        {
+            this.bte[bt].SetEstado(e);
         }
 
         public int GetMaiorBti()
@@ -122,10 +127,111 @@ namespace Trabalho_SisSuper
 
             return maior;
         }
+        public int GetMaiorBte()
+        {
+            int contador = 0;
+            int maior = 0;
+            bool naoAcionou = true;
+
+            for (int i = 0; i < 5; i++)
+            {
+                if (GetBte(i))
+                {
+                    if (contador > maior)
+                    {
+                        maior = contador;
+                    }
+
+                    naoAcionou = false;
+                }
+
+                contador++;
+            }
+
+            if (naoAcionou)//se num teve acionamento externo
+            {
+                return GetAndar();
+            }
+
+            return maior;
+        }
+
+        public int GetMenorBti()
+        {
+            int contador = 0;
+            int menor = 4;//maior andar
+            bool naoAcionou = true;
+
+            for (int i = 0; i < 5; i++)
+            {
+                if (GetBti(i))
+                {
+                    if (contador < menor)
+                    {
+                        menor = contador;
+                    }
+
+                    naoAcionou = false;
+                }
+
+                contador++;
+            }
+
+            if (naoAcionou)//se num teve acionamento interno
+            {
+                return GetAndar();
+            }
+
+            return menor;
+        }
+
+        public int GetMenorBte()
+        {
+            int contador = 0;
+            int menor = 4;//maior andar
+            bool naoAcionou = true;
+
+            for (int i = 0; i < 5; i++)
+            {
+                if (GetBte(i))
+                {
+                    if (contador < menor)
+                    {
+                        menor = contador;
+                    }
+
+                    naoAcionou = false;
+                }
+
+                contador++;
+            }
+
+            if (naoAcionou)//se num teve acionamento interno
+            {
+                return GetAndar();
+            }
+
+            return menor;
+        }
 
         public bool GetBti(int bt)
         {
             return this.bti[bt].GetEstado();
+        }
+
+        public bool GetBte(int bt)
+        {
+            return this.bte[bt].GetEstado();
+        }
+
+        public bool GetBteUp(int bt)
+        {
+            return this.bte[bt].GetBtup();
+        }
+
+        public bool GetBteDown(int bt)
+        {
+            return this.bte[bt].GetBtdown();
         }
 
         public Botao GetBtin(int bt)
@@ -133,10 +239,37 @@ namespace Trabalho_SisSuper
             return bti[bt];
         }
 
+        public Botao GetBtex(int bt)
+        {
+            return bte[bt];
+        }
+
+        public void setBtes(int bt, bool e, bool a, bool sd)//bt> o botao acinado, e> se foi apertado, a> sobe ou desce
+        {
+            this.bte[bt].SetEstado(e);
+            this.bte[bt].SetAcao(a);
+            this.bte[bt].SetBtup(sd);
+        }
+
+        public void setBted(int bt, bool e, bool a, bool sd)//bt> o botao acinado, e> se foi apertado, a> sobe ou desce
+        {
+            this.bte[bt].SetEstado(e);
+            this.bte[bt].SetAcao(a);
+            this.bte[bt].SetBtdown(sd);
+        }
+
         public void setBte(int bt, bool e, bool a)//bt> o botao acinado, e> se foi apertado, a> sobe ou desce
         {
             this.bte[bt].SetEstado(e);
             this.bte[bt].SetAcao(a);
+        }
+
+        public void setBteTotal(int bt, bool e, bool a)//bt> o botao acinado, e> se foi apertado, a> sobe ou desce
+        {
+            this.bte[bt].SetEstado(e);
+            this.bte[bt].SetAcao(a);
+            this.bte[bt].SetBtdown(false);
+            this.bte[bt].SetBtup(false);
         }
 
     }

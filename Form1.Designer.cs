@@ -58,17 +58,19 @@ namespace Trabalho_SisSuper
             this.l3 = new System.Windows.Forms.Label();
             this.l4 = new System.Windows.Forms.Label();
             this.l5 = new System.Windows.Forms.Label();
+            this.terr = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // bti0
             // 
+            this.bti0.BackColor = System.Drawing.Color.LightGray;
             this.bti0.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bti0.Location = new System.Drawing.Point(111, 290);
             this.bti0.Name = "bti0";
             this.bti0.Size = new System.Drawing.Size(72, 58);
             this.bti0.TabIndex = 0;
             this.bti0.Text = "0";
-            this.bti0.UseVisualStyleBackColor = true;
+            this.bti0.UseVisualStyleBackColor = false;
             this.bti0.Click += new System.EventHandler(this.bti0_Click);
             // 
             // label1
@@ -297,6 +299,7 @@ namespace Trabalho_SisSuper
             // manual
             // 
             this.manual.AutoSize = true;
+            this.manual.Checked = true;
             this.manual.Location = new System.Drawing.Point(341, 253);
             this.manual.Name = "manual";
             this.manual.Size = new System.Drawing.Size(60, 17);
@@ -313,7 +316,6 @@ namespace Trabalho_SisSuper
             this.automatico.Name = "automatico";
             this.automatico.Size = new System.Drawing.Size(78, 17);
             this.automatico.TabIndex = 3;
-            this.automatico.TabStop = true;
             this.automatico.Text = "Automatico";
             this.automatico.UseVisualStyleBackColor = true;
             this.automatico.CheckedChanged += new System.EventHandler(this.automatico_CheckedChanged);
@@ -363,11 +365,21 @@ namespace Trabalho_SisSuper
             this.l5.TabIndex = 4;
             this.l5.Text = "l5";
             // 
+            // terr
+            // 
+            this.terr.AutoSize = true;
+            this.terr.Location = new System.Drawing.Point(386, 408);
+            this.terr.Name = "terr";
+            this.terr.Size = new System.Drawing.Size(15, 13);
+            this.terr.TabIndex = 4;
+            this.terr.Text = "l5";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.terr);
             this.Controls.Add(this.l5);
             this.Controls.Add(this.l4);
             this.Controls.Add(this.l3);
@@ -436,6 +448,7 @@ namespace Trabalho_SisSuper
         private System.Windows.Forms.Label l3;
         private System.Windows.Forms.Label l4;
         private System.Windows.Forms.Label l5;
+        private System.Windows.Forms.Label terr;
     }
 }
 

@@ -10,10 +10,24 @@ namespace Trabalho_SisSuper
     {
         private bool acao;
         private bool estado;
+        private bool btup;
+        private bool btdown;
         public Botao()
         {
             SetAcao(false);
             SetEstado(false);
+            SetBtdown(false);
+            SetBtup(false);
+        }
+
+        public void SetBtup(bool u)
+        {
+            this.btup = u;
+        }
+
+        public void SetBtdown(bool d)
+        {
+            this.btdown = d;
         }
 
         public void SetAcao(bool a)
@@ -34,6 +48,16 @@ namespace Trabalho_SisSuper
         public bool GetEstado()
         {
             return this.estado;
+        }
+
+        public bool GetBtup()
+        {
+            return this.btup;
+        }
+
+        public bool GetBtdown()
+        {
+            return this.btdown;
         }
     }
 }
