@@ -44,8 +44,13 @@ namespace Trabalho_SisSuper
                     l4.Text = simulador.GetBteDown(2).ToString();
                     l5.Text = simulador.GetBteUp(3).ToString();
                     terr.Text = simulador.GetBteDown(3).ToString();
-
+                    
                     corAnterior();
+
+                if (simulador.GetModo())//automatico
+                {
+                    modoAuto();
+                }
 
              });
             
@@ -112,7 +117,7 @@ namespace Trabalho_SisSuper
 
         private void btesobe1_Click(object sender, EventArgs e)
         {  
-            if (simulador.GetAndar() != 1)
+            if ((simulador.GetAndar() != 1)&&(!simulador.GetModo()))
             {
                 simulador.setBtes(1, true, true, true);
                 btesobe1.BackColor = System.Drawing.Color.Red;
@@ -121,7 +126,7 @@ namespace Trabalho_SisSuper
 
         private void btedesce1_Click(object sender, EventArgs e)
         {
-            if (simulador.GetAndar() != 1)
+            if ((simulador.GetAndar() != 1)&&(!simulador.GetModo()))
             {
                 simulador.setBted(1, true, false, true);
                 btedesce1.BackColor = System.Drawing.Color.Red;
@@ -131,7 +136,7 @@ namespace Trabalho_SisSuper
         private void btesobe2_Click(object sender, EventArgs e)
         {
            
-            if (simulador.GetAndar() != 2)
+            if ((simulador.GetAndar() != 2)&&(!simulador.GetModo()))
             {
                 simulador.setBtes(2, true, true, true);
                 btesobe2.BackColor = System.Drawing.Color.Red;
@@ -141,7 +146,7 @@ namespace Trabalho_SisSuper
         private void btedesce2_Click(object sender, EventArgs e)
         {
            
-            if (simulador.GetAndar() != 2)
+            if ((simulador.GetAndar() != 2)&&(!simulador.GetModo()))
             {
                 simulador.setBted(2, true, false, true);
                 btedesce2.BackColor = System.Drawing.Color.Red;
@@ -152,7 +157,7 @@ namespace Trabalho_SisSuper
         private void btesobe3_Click(object sender, EventArgs e)
         {
            
-            if (simulador.GetAndar() != 3)
+            if ((simulador.GetAndar() != 3)&& (!simulador.GetModo()))
             {
                 simulador.setBtes(3, true, true, true);
                 btesobe3.BackColor = System.Drawing.Color.Red;
@@ -162,7 +167,7 @@ namespace Trabalho_SisSuper
         private void btedesce3_Click(object sender, EventArgs e)
         {
             
-            if (simulador.GetAndar() != 3)
+            if ((simulador.GetAndar() != 3)&&(!simulador.GetModo()))
             {
                 simulador.setBted(3, true, false, true);
                 btedesce3.BackColor = System.Drawing.Color.Red;
@@ -172,7 +177,7 @@ namespace Trabalho_SisSuper
         private void bteandar4_Click(object sender, EventArgs e)
         {
            
-            if (simulador.GetAndar() != 4)
+            if ((simulador.GetAndar() != 4)&& (!simulador.GetModo()))
             {
                 simulador.setBte(4, true, false);
                 bteandar4.BackColor = System.Drawing.Color.Red;
@@ -182,7 +187,7 @@ namespace Trabalho_SisSuper
         private void bteterreo_Click(object sender, EventArgs e)
         {
             
-            if (simulador.GetAndar() != 0)
+            if ((simulador.GetAndar() != 0)&& (!simulador.GetModo()))
             {
                 simulador.setBte(0, true, true);
                 bteterreo.BackColor = System.Drawing.Color.Red;
@@ -195,11 +200,11 @@ namespace Trabalho_SisSuper
             {
                 if (simulador.GetAcaoMovimento())
                 {
-                    estado.Text = "Subindo";
+                    estado.Text = "Subindo...";
                 }
                 else
                 {
-                    estado.Text = "Descendo";
+                    estado.Text = "Descendo...";
                 }
             }
             else
@@ -273,6 +278,51 @@ namespace Trabalho_SisSuper
             if ((bteandar4.BackColor == System.Drawing.Color.Red) && (!simulador.GetBte(4)))
             {
                 bteandar4.BackColor = System.Drawing.Color.LightGray;
+            }
+
+        }
+
+        private void modoAuto()
+        {
+            
+            if ((btesobe1.BackColor != System.Drawing.Color.Red) && (simulador.GetBteUp(1)))
+            {
+                btesobe1.BackColor = System.Drawing.Color.Red;
+            }
+
+            if ((btedesce1.BackColor != System.Drawing.Color.Red) && (simulador.GetBteDown(1)))
+            {
+                btedesce1.BackColor = System.Drawing.Color.Red;
+            }
+
+            if ((btesobe2.BackColor != System.Drawing.Color.Red) && (simulador.GetBteUp(2)))
+            {
+                btesobe2.BackColor = System.Drawing.Color.Red;
+            }
+
+            if ((btedesce2.BackColor != System.Drawing.Color.Red) && (simulador.GetBteDown(2)))
+            {
+                btedesce2.BackColor = System.Drawing.Color.Red;
+            }
+
+            if ((btesobe3.BackColor != System.Drawing.Color.Red) && (simulador.GetBteUp(3)))
+            {
+                btesobe3.BackColor = System.Drawing.Color.Red;
+            }
+
+            if ((btedesce3.BackColor != System.Drawing.Color.Red) && (simulador.GetBteDown(3)))
+            {
+                btedesce3.BackColor = System.Drawing.Color.Red;
+            }
+
+            if ((bteterreo.BackColor != System.Drawing.Color.Red) && (simulador.GetBte(0)))
+            {
+                bteterreo.BackColor = System.Drawing.Color.Red;
+            }
+
+            if ((bteandar4.BackColor != System.Drawing.Color.Red) && (simulador.GetBte(4)))
+            {
+                bteandar4.BackColor = System.Drawing.Color.Red;
             }
 
         }

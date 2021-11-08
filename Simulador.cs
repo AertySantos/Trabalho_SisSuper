@@ -21,7 +21,7 @@ namespace Trabalho_SisSuper
                 {
                     if (GetModo())
                     {
-                        
+                        automatico();
                     }
                     else
                     {
@@ -66,6 +66,27 @@ namespace Trabalho_SisSuper
             {
                 SetMovimento(false); //parado
 
+            }
+        }
+
+        public void automatico()
+        {
+
+            manual();
+
+            Random rnd = new Random();
+            int indice = rnd.Next(5);
+
+            Random rnd2 = new Random();
+            int pre = rnd.Next(10);
+
+            if ((GetAndar() != indice)&&(pre >= 5))
+            {
+                setBtes(indice, true, true, true);
+
+            }else if (GetAndar() != indice)
+            {
+                setBted(indice, true, true, true);
             }
         }
 
