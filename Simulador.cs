@@ -150,7 +150,7 @@ namespace Trabalho_SisSuper
                             if (GetBteDown(GetAndar()))
                             {
                                 setBtes(GetAndar(), true, false, false);
-                                //statusE = true;
+                                statusE = true;
                             }
                             else
                             {
@@ -199,7 +199,7 @@ namespace Trabalho_SisSuper
                             if (GetBteUp(GetAndar()))
                             {
                                 setBted(GetAndar(), true, false, false);
-                                //statusE = true;
+                                statusE = true;
                             }
                             else
                             {
