@@ -8,27 +8,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using log4net;
 
 namespace Trabalho_SisSuper
 {
     public partial class Form1 : Form
     {
+        private static readonly ILog Log =
+            LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         Simulador simulador;
-        Task teste;
+        Task paralelo;
         public Form1()
         {
             InitializeComponent();
             simulador = new Simulador();
 
             this.simulador.Monitor += Monitora_Elevador;
-            teste = new Task(simulador.doSimulador);
-            //this.teste.Start();
+            paralelo = new Task(simulador.doSimulador);
+            
 
         }
 
        private void Form1_Load(object sender, EventArgs e)
         {
-            this.teste.Start();
+            this.paralelo.Start();
+            Log.Info("Log do painel interno do elevador iniciado");
         }
 
         private void Monitora_Elevador(object sender, EventArgs e)
@@ -56,6 +60,7 @@ namespace Trabalho_SisSuper
            
             if(simulador.GetAndar() != 0)
             {
+                Log.Info("Andar 0 acionado");
                 simulador.setBti(0, true);
                 bti0.BackColor = System.Drawing.Color.Red;
             }
@@ -66,6 +71,7 @@ namespace Trabalho_SisSuper
         {
             if (simulador.GetAndar() != 1)
             {
+                Log.Info("Andar 1 acionado");
                 simulador.setBti(1, true);
                 bti1.BackColor = System.Drawing.Color.Red;
             }
@@ -75,6 +81,7 @@ namespace Trabalho_SisSuper
         {
             if (simulador.GetAndar() != 2)
             {
+                Log.Info("Andar 2 acionado");
                 simulador.setBti(2, true);
                 bti2.BackColor = System.Drawing.Color.Red;
             }
@@ -84,6 +91,7 @@ namespace Trabalho_SisSuper
         {
             if (simulador.GetAndar() != 3)
             {
+                Log.Info("Andar 3 acionado");
                 simulador.setBti(3, true);
                 bti3.BackColor = System.Drawing.Color.Red;
             }
@@ -93,6 +101,7 @@ namespace Trabalho_SisSuper
         {
             if (simulador.GetAndar() != 4)
             {
+                Log.Info("Andar 4 acionado");
                 simulador.setBti(4, true);
                 bti4.BackColor = System.Drawing.Color.Red;
             }
